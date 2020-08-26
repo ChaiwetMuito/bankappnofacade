@@ -16,10 +16,9 @@ import java.util.ArrayList;
  * @author YUME
  */
 public class MyFacade {
-    private static MyFacade MyfacadeObj = null;
     private ArrayList<CustomerIf> customerList = new ArrayList();
     
-    private  MyFacade(){
+    MyFacade(){
         // customer 1
        ArrayList<AccountIf> cust1Accounts = new ArrayList();
        AccountIf acc1 = new BankAccount(44444);
@@ -41,12 +40,7 @@ public class MyFacade {
        customerList.add(cust2);
        customerList.add(cust1);
     }
-    public static MyFacade getMyFacadeObj(){
-        if (MyfacadeObj == null){
-            MyfacadeObj = new MyFacade();
-        }
-        return MyfacadeObj;
-    }
+
     public  void doDeposit(double amt, CustomerIf cust, int accNo){
         cust.getAccount(accNo).deposit(amt);
         

@@ -43,7 +43,7 @@ public class BankFacade {
 //           System.out.println("Account number " + account.getAccountNumber() + " has " + account.getBalance());
 //       }
 
-        MyFacade facade = MyFacade.getMyFacadeObj();
+        MyFacade facade = new MyFacade();
         System.out.println("------Jame-----");
         CustomerIf cust1 = facade.getBankCustomer("Jame");
         facade.doDeposit(500, cust1, 11111);
